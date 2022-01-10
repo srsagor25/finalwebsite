@@ -1,0 +1,42 @@
+.body{
+  text-align: center;
+}
+
+
+#btn1{
+
+width: 50 px;
+height: 50px;
+border-radius: 50%;
+background-color: red;
+
+}
+
+#btn2{
+
+    width: 50 px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    
+    }
+
+
+
+  #btn3{
+    width: 50 px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+            
+            
+      }
+
+      #btn4{
+        width: 50 px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+                
+                
+          }

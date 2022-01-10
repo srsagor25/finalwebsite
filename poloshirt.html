@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    
+    
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/poloshirt.css">
+
+
+</head>
+
+
+
+<body>
+
+    
+        <div class="container">
+
+ <!--Customizing-->
+        
+ <div>
+    <img id="pic" src="assets/images/7.png" alt="tshirt" width="400 px">
+
+</div>
+
+<div>
+    <button id ="btn1" onclick="change1()"></button>
+    <button id ="btn2" onclick="change2()"></button>
+    <button id ="btn3" onclick="change3()"></button>
+    <button id ="btn4" onclick="change4()"></button>
+
+
+</div>
+
+<script>
+    function change1(){
+        document.getElementById('pic').src='assets/images/1.png';
+    }
+
+    function change2(){
+        document.getElementById('pic').src='assets/images/2.png';
+    }
+
+    function change3(){
+        document.getElementById('pic').src='assets/images/3.png';
+    }
+
+    function change4(){
+        document.getElementById('pic').src='assets/images/4.png';
+    }
+</script>
+
+
+
+
+
+
+
+        <!--Design Submit-->
+
+
+        <div>
+
+            <div class="scroll-area">
+
+                <div class="line">
+                    <div class="q">
+                        <span class="no">
+                         
+                        </span> 
+                        <span data-lang-bn="আপনি কত পিস বানাতে চাচ্ছেন?" data-lang-en="How many pieces do you want?">How many pieces do you want?</span>
+                    </div>
+                    <div class="option option-shrink product-qty">
+                        <div class="item capqty">
+                            <div class="item-input">
+                                <input type="number" value="0">
+                            </div>
+                        </div>
+                    </div>
+                   
+                <div class="line half-on-mobile frontside-line">
+                    <div class="q">
+                        <span class="no">
+                        </span>  <span data-lang-en="Do you want to print anything on front of the t-shirt?" data-lang-bn="টিশার্টের সামনের দিকে কী কিছু প্রিন্ট করাবেন?">Do you want to print anything on front of the t-shirt?</span>
+                    </div>
+                    <div id="front_colors"></div>
+                    <div class="input">
+                        <label class="file-button" id="frontbtn">
+                            <i class="fa fa-picture-o"></i> <span data-lang-en="Yes, I'll choose frontside image" data-lang-bn="টিশার্টের সামনের ছবি নির্বাচন করব">I'll choose frontside image</span>
+                            <input type="file" id="front" accept="image/*">
+                        </label>
+                    </div>
+                    <div class="option multi-option front-print hidden">
+                        <div class="item active" data-value="Full Front">
+                            <div class="option-txt">
+                                <div class="selection"><span data-lang-en="Full Front" data-lang-bn="সামনেরদিক সম্পূর্ণ">Full Front</span></div>
+                            </div>
+                        </div>
+                        <div class="item" data-value="Chest Right">
+                            <div class="option-txt">
+                                <div class="selection"><span data-lang-en="Chest Right" data-lang-bn="ডানপাশে">Chest Right</span></div>
+                            </div>
+                        </div>
+                        <div class="item" data-value="Chest Left">
+                            <div class="option-txt">
+                                <div class="selection"><span data-lang-en="Chest Left" data-lang-bn="বামপাশে">Chest Left</span></div>
+                            </div>
+                        </div>
+                        <div class="item remover" data-price="0" onclick="$('#front').val('');$(this).parent().addClass('hidden');$('#front_colors').html('');$('#frontbtn').show();drawCanvas();setTimeout(function(){drawCanvas()},100);">
+                            <div class="option-txt">
+                                <div class="selection"><i class="fa fa-trash"></i><span data-lang-en="Remove" data-lang-bn="বাতিল">Remove</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <label class="checkbox"><input type="checkbox" id="fronttransparent"> <span data-lang-en="transparent background (preview may not be accurate)" data-lang-bn="ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড (প্রিভিউ সঠিক নাও আসতে পারে)"></span> </label>
+                </div>
+            
+                <div class="line half-on-mobile backside-line">
+                    <div class="q">
+                        <span class="no">
+                        </span>  <span data-lang-en="Do you want to print anything on back of the t-shirt?" data-lang-bn="টিশার্টের পিছনের দিকে কী কিছু প্রিন্ট করাবেন?">Do you want to print anything on front of the t-shirt?</span>
+                    </div>
+                    <div id="back_colors"></div>
+                    <div class="input">
+                        <label class="file-button" id="backbtn">
+                            <i class="fa fa-picture-o"></i> <span data-lang-en="Yes, I'll choose backside image" data-lang-bn="টিশার্টের পিছনের ছবি নির্বাচন করব">I'll choose backside image</span>
+                            <input type="file" id="back" accept="image/*">
+                        </label>
+                    </div>
+                    <div class="option multi-option back-print hidden">
+                        <div class="item active" data-value="Full Back">
+                            <div class="option-txt">
+                                <div class="selection"><span data-lang-en="Full Front" data-lang-bn="পিছনদিকে সম্পূর্ণ">Full Back</span></div>
+                            </div>
+                        </div>
+                        <div class="item remover" data-price="0" onclick="$('#back').val('');$(this).parent().addClass('hidden');$('#backbtn').show();$('#back_colors').html('');setTimeout(function(){drawCanvas()},100);">
+                            <div class="option-txt">
+                                <div class="selection"><i class="fa fa-trash"></i><span data-lang-en="Remove" data-lang-bn="বাতিল">Remove</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <label class="checkbox"><input type="checkbox" id="backtransparent"> <span data-lang-en="transparent background (preview may not be accurate)" data-lang-bn="ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড (প্রিভিউ সঠিক নাও আসতে পারে)"></span> </label>
+                </div>
+                
+            
+            </div>
+            </div>
+                
+            
+        
+
+
+         </div>
+
+
+
+     
+         <form>
+            <h2>Fill up the information</h2>
+            <div class="row">
+              <div class="col-sm-6">
+            
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="password" class="form-control" id="name" placeholder="Your Name">
+                </div>
+            
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email address (never shown)">
+                </div>
+            
+              </div>
+              
+              <div class="col-xs-12">
+                <p class="help-block">Please select the number of T-shirts per size you would like to order.</p>
+              </div>
+
+
+              <div class="col-sm-6">
+                <div class="row">
+            
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="shirt-s">S</label>
+                      <input class="form-control" type="text" id="shirt-s">
+                    </div>
+                  </div>
+            
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="shirt-m">M</label>
+                      <input class="form-control" type="text" id="shirt-m">
+                    </div>
+                  </div>
+            
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="shirt-l">L</label>
+                      <input class="form-control" type="text" id="shirt-l">
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="shirt-xl">XL</label>
+                      <input class="form-control" type="text" id="shirt-xl">
+                    </div>
+                  </div>
+            
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="form-group">
+                      <label for="shirt-xxl">XXL</label>
+                      <input class="form-control" type="text" id="shirt-xxl">
+                    </div>
+
+                    <button class="submit" style="position: relative;overflow: hidden;">
+                        <span data-lang-en="Request Quotation" data-lang-bn="কোটেশনের আবেদন করুন">Request Quotation</span> <i class="fa fa-chevron-right"></i>
+                    </button>
+                  </div>       
+        
+</body>
+
+
+</html>
+
+
+
+
+
+
